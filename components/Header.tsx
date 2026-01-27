@@ -37,7 +37,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
     { id: 'home', label: t.home, type: 'section' },
     { id: 'about', label: t.about, type: 'section' },
     { id: 'vision', label: t.vision, type: 'section' },
-    { id: 'ambassador', label: t.ambassador, type: 'section' },
     { id: 'blog', label: t.blog, type: 'section' },
     { id: 'contact', label: t.contact, type: 'section' },
     { id: 'realisations', label: t.realisations, type: 'page' },
