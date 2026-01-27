@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Language } from '../types';
 import { translations } from '../translations';
 
@@ -6,8 +6,19 @@ interface HeroProps {
   language: Language;
 }
 
+const MAX_LENGTH = 160;
+
 const Hero: React.FC<HeroProps> = ({ language }) => {
   const t = translations[language].hero;
+
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const truncateText = (text: string) => {
+    if (text.length <= MAX_LENGTH) return text;
+    return text.slice(0, MAX_LENGTH) + '…';
+  };
+
+  const shouldShowReadMore = t.desc.length > MAX_LENGTH;
 
   return (
     <section
@@ -32,9 +43,20 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
             {t.title}
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-            {t.desc}
-          </p>
+          <div className="text-lg sm:text-xl text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="mb-4">
+              {isExpanded ? t.desc : truncateText(t.desc)}
+            </p>
+
+            {shouldShowReadMore && (
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-red-600 hover:text-red-700 font-semibold underline transition-colors duration-200"
+              >
+                {isExpanded ? 'Voir moins' : 'Voir plus'}
+              </button>
+            )}
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button
@@ -73,23 +95,13 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         {/* Profile Picture Container */}
         <div className="lg:w-[40%] relative w-full max-w-[340px] sm:max-w-md lg:max-w-none order-1 lg:order-2">
           <div className="relative z-10 w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[3rem] p-2 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden">
-           
-
-                  <div className="w-full h-full rounded-[2.5rem] overflow-hidden border-[0px] border-slate-200">
-  <img
-    src="https://i.postimg.cc/0QY37TZh/Weixin-Image-20260127131401-439-48.jpg"
-    alt="Profile"
-    className="w-full h-full object-cover object-center" 
-  />
-</div>
-
-
-
-
-
-
-
-
+            <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
+              <img
+                src="https://i.postimg.cc/0QY37TZh/Weixin-Image-20260127131401-439-48.jpg"
+                alt="Profile"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
           </div>
         </div>
 
