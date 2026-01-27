@@ -97,7 +97,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           <div className="relative z-10 w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[3rem] p-2 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden">
             <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
               <img
-                src="https://i.postimg.cc/0QY37TZh/Weixin-Image-20260127131401-439-48.jpg"
+                src="https://i.postimg.cc/BbHnVXzy/maxpic.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover object-center"
               />
