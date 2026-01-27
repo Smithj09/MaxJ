@@ -172,7 +172,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             href="mailto:maxgaspard@example.com" 
             className="text-red-400 hover:text-red-300 font-bold transition-colors duration-200"
           >
-            maxgaspard@example.com
+            maxjohnsleygaspard777@gmail.com
           </a>
         </div>
       </div>

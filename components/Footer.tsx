@@ -82,7 +82,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           <div className="space-y-6">
             <div className="flex flex-col">
               <span className="text-2xl font-black text-white tracking-tighter uppercase">
-                MAX GASPARD
+                MAX JHONSLEY GASPARD
               </span>
               <div className="h-1 w-12 bg-red-600 mt-1 rounded-full"></div>
             </div>
@@ -147,7 +147,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span>contact@maxgaspard.com</span>
+                <span>maxjohnsleygaspard777@gmail.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <svg
