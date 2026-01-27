@@ -73,13 +73,23 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         {/* Profile Picture Container */}
         <div className="lg:w-[40%] relative w-full max-w-[340px] sm:max-w-md lg:max-w-none order-1 lg:order-2">
           <div className="relative z-10 w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[3rem] p-2 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden">
-            <div className="w-full h-full rounded-[2.5rem] overflow-hidden border-[6px] border-slate-200">
-              <img
-                src="/profile.jpg"   // 🔁 change if needed
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
-            </div>
+           
+
+                  <div className="w-full h-full rounded-[2.5rem] overflow-hidden border-[0px] border-slate-200">
+  <img
+    src="https://i.postimg.cc/0QY37TZh/Weixin-Image-20260127131401-439-48.jpg"
+    alt="Profile"
+    className="w-full h-full object-cover object-center" 
+  />
+</div>
+
+
+
+
+
+
+
+
           </div>
         </div>
 
