@@ -32,7 +32,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       // Simple mailto approach - opens user's email client with pre-filled data
       const subject = `Message from ${formData.firstName} ${formData.lastName}`;
       const body = `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-      const mailtoLink = `mailto:maxgaspard@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoLink = `mailto:maxjohnsleygaspard777@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       
       window.location.href = mailtoLink;
       setSubmitStatus('success');
@@ -169,7 +169,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             {language === 'zh' && "您也可以直接通过以下方式联系我"}
           </p>
           <a 
-            href="mailto:maxgaspard@example.com" 
+            href="mailto:maxjohnsleygaspard777@gmail.com" 
             className="text-red-400 hover:text-red-300 font-bold transition-colors duration-200"
           >
             maxjohnsleygaspard777@gmail.com
