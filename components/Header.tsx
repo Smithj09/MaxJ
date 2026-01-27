@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
 import { translations } from '../translations';
 
@@ -16,6 +15,16 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
   const [isLangOpen, setIsLangOpen] = useState(false);
 
   const t = translations[language].nav;
+
+  // Prevent background scroll when full-screen menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isMenuOpen]);
 
   const languages: { code: Language, label: string, flag: string }[] = [
     { code: 'fr', label: 'Français', flag: '🇫🇷' },
@@ -45,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
     <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950 backdrop-blur-md border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => handleNavClick({ id: 'home', type: 'section' })}>
+          <div className="flex-shrink-0 cursor-pointer z-[60]" onClick={() => handleNavClick({ id: 'home', type: 'section' })}>
             <span className="text-xl sm:text-2xl font-black text-white tracking-tight">Max Jhonsley Gaspard</span>
           </div>
           
@@ -62,7 +71,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
               </button>
             ))}
 
-            {/* Language Selector */}
             <div className="relative">
               <button 
                 onClick={() => setIsLangOpen(!isLangOpen)}
@@ -85,25 +93,17 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
                 </div>
               )}
             </div>
-
-            <button
-              onClick={() => onNavigate('home', 'contact')}
-              className="bg-red-600 text-white text-sm font-bold px-6 py-2.5 rounded-full hover:bg-red-700 transition-all shadow-md shadow-red-900/30 active:scale-95"
-            >
-              {t.contact}
-            </button>
           </nav>
 
-          {/* Mobile Menu Toggle */}
-          <div className="lg:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-4 z-[60]">
             <button 
               onClick={() => setIsLangOpen(!isLangOpen)}
               className="bg-slate-800 p-2 rounded-full border border-slate-700 text-white"
             >
               {languages.find(l => l.code === language)?.flag}
             </button>
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white p-2">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                 {isMenuOpen ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M4 6h16M4 12h16M4 18h16" />}
               </svg>
             </button>
@@ -111,14 +111,14 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
         </div>
       </div>
 
-      {/* Mobile Nav Overlay */}
+      {/* FIXED FULL SCREEN OVERLAY - Original text size & position preserved */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-slate-950 border-b border-slate-800 px-4 py-6 space-y-4 animate-in slide-in-from-top duration-300">
+        <div className="fixed inset-0 lg:hidden bg-slate-950 pt-24 px-4 pb-6 space-y-4 animate-in slide-in-from-top duration-300 z-[55] h-screen overflow-y-auto">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item)}
-              className="block w-full text-left text-lg font-bold text-white px-4 py-2 rounded-xl hover:bg-slate-800"
+              className="block w-full text-left text-lg font-bold text-white px-4 py-2 rounded-xl hover:bg-slate-800 transition-colors"
             >
               {item.label}
             </button>
@@ -128,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
       
       {/* Mobile Language Popup */}
       {isLangOpen && !isMenuOpen && (
-        <div className="lg:hidden fixed top-20 left-0 right-0 p-4 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 shadow-2xl z-40">
+        <div className="lg:hidden fixed top-20 left-0 right-0 p-4 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 shadow-2xl z-40 animate-in slide-in-from-top duration-200">
           <div className="grid grid-cols-2 gap-4">
             {languages.map((l) => (
               <button
