@@ -33,11 +33,20 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
       )
     },
     {
-      name: 'Twitter',
-      url: 'https://twitter.com/maxgaspard',
+      name: 'X',
+      url: 'https://x.com/maxgaspard',
       icon: (
         <>
-          <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </>
+      )
+    },
+    {
+      name: 'Facebook',
+      url: 'https://facebook.com/maxgaspard',
+      icon: (
+        <>
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
         </>
       )
     },
@@ -67,7 +76,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
   return (
     <footer className="bg-slate-950 text-slate-300 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
 
           {/* Brand & Mission Column */}
           <div className="space-y-6">
@@ -164,77 +173,10 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
               </li>
             </ul>
           </div>
-
-          {/* Newsletter Column */}
-          <div>
-            <h4 className="text-white font-bold text-lg mb-6">
-              {t.stayConnected}
-            </h4>
-            <p className="text-sm text-slate-400 mb-4">
-              {language === 'zh'
-                ? '订阅以获取我最新计划的动态。'
-                : language === 'ru'
-                ? 'Подпишитесь, чтобы получать последние новости о моих инициативах.'
-                : language === 'en'
-                ? 'Sign up to receive the latest news on my initiatives.'
-                : 'Inscrivez-vous pour recevoir les dernières nouvelles sur mes initiatives.'}
-            </p>
-            {isSubscribed ? (
-              <div className="bg-green-900 border border-green-700 rounded-lg px-4 py-3 text-sm text-green-300">
-                {language === 'zh'
-                  ? '感谢订阅！'
-                  : language === 'ru'
-                  ? 'Спасибо за подписку!'
-                  : language === 'en'
-                  ? 'Thank you for subscribing!'
-                  : 'Merci pour votre inscription !'}
-              </div>
-            ) : (
-              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={
-                    language === 'zh'
-                      ? '您的电子邮件'
-                      : language === 'ru'
-                      ? 'Ваш email'
-                      : language === 'en'
-                      ? 'Your email'
-                      : 'Votre email'
-                  }
-                  className="bg-slate-900 border border-slate-800 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-red-600 transition-all"
-                  required
-                  aria-label="Email address for newsletter"
-                />
-                <button
-                  type="submit"
-                  className="bg-red-600 hover:bg-red-700 text-white p-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={!email || !email.includes('@')}
-                  aria-label="Subscribe to newsletter"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </button>
-              </form>
-            )}
-          </div>
         </div>
 
-        {/* Social Icons & Copyright */}
-        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-8">
+        {/* Social Icons */}
+        <div className="pt-8 border-t border-slate-900 flex justify-center items-center mb-8">
           <div className="flex gap-6">
             {socialLinks.map((link) => (
               <a
@@ -256,12 +198,15 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
               </a>
             ))}
           </div>
+        </div>
 
-          <div className="text-sm text-slate-500 text-center md:text-right">
+        {/* Copyright */}
+        <div className="flex flex-col items-center gap-8">
+          <div className="text-sm text-slate-500 text-center">
             <p>
               © {currentYear} Max Johnsley Gaspard. {t.rights}
             </p>
-            <p className="mt-1 text-slate-600 flex items-center justify-center md:justify-end gap-1">
+            <p className="mt-1 text-slate-600 flex items-center justify-center gap-1">
               {language === 'zh'
                 ? '致力于建设主权海地'
                 : language === 'ru'
