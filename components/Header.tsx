@@ -28,6 +28,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
     { id: 'home', label: t.home, type: 'section' },
     { id: 'about', label: t.about, type: 'section' },
     { id: 'vision', label: t.vision, type: 'section' },
+    { id: 'contact', label: t.contact, type: 'section' },
     { id: 'realisations', label: t.realisations, type: 'page' },
   ];
 
@@ -86,7 +87,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
             </div>
 
             <button
-              onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+              onClick={() => onNavigate('home', 'contact')}
               className="bg-red-600 text-white text-sm font-bold px-6 py-2.5 rounded-full hover:bg-red-700 transition-all shadow-md shadow-red-900/30 active:scale-95"
             >
               {t.contact}
