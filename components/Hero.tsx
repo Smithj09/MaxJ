@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button
               onClick={() =>
-                document.getElementById('vision')?.scrollIntoView({ behavior: 'smooth' })
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
               }
               className="group bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-red-600 transition-all shadow-xl hover:shadow-red-200 active:scale-95 flex items-center justify-center gap-2"
             >
@@ -83,7 +83,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
 
             <button
               onClick={() =>
-                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
+                document.getElementById('vision')?.scrollIntoView({ behavior: 'smooth' })
               }
               className="bg-white text-slate-900 border-2 border-slate-100 px-8 py-4 rounded-2xl font-bold hover:bg-slate-50 transition-all active:scale-95"
             >
