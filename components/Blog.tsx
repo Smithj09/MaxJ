@@ -26,7 +26,7 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
         ru: "Основные моменты недавнего мероприятия культурного обмена, способствующего развитию гаитяно-китайских отношений через искусство и музыку.",
         zh: "近期文化交流活动的精彩瞬间，通过艺术和音乐促进海地与中国的关系。"
       }[language],
-      videoUrl: "https://www.youtube.com/embed/example1",
+      videoUrl: "https://res.cloudinary.com/dkyyt4fts/video/upload/v1769608270/WhatsApp_Video_2026-01-27_at_20.58.33_byatqo.mp4",
       thumbnail: "/images/blog-2026-cultural-exchange.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
