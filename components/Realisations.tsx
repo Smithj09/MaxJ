@@ -121,16 +121,16 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
     {
       year: "2021",
       title: {
-        en: "Community Engagement",
-        fr: "Rencontre avec un responsable de l'Université de Pékin",
-        ru: "Вовлечение сообщества",
-        zh: "社区参与"
+          "en": "Meeting at Peking University",
+          "fr": "Rencontre à l’Université de Pékin",
+          "ru": "Встреча в Пекинском университете",
+          "zh": "在北京大学的会面"
       }[language],
       desc: {
-        en: "Foundational work in grassroots organization and community development initiatives in Haiti.",
-        fr: "En 2024, Max Johnsley Gaspard avait eu l'occasion de rencontrer l'un des responsables de Pekin University.",
-        ru: "Фундаментальная работа в сфере низовой организации и инициатив по развитию сообществ на Гаити.",
-        zh: "在海地开展基层组织建设和社区发展倡议方面的基础性工作。"
+         "en": "In 2024, Max Johnsley Gaspard had the opportunity to meet one of the officials of Peking University.",
+  "fr": "En 2024, Max Johnsley Gaspard avait eu l'occasion de rencontrer l'un des responsables de Pekin University.",
+  "ru": "В 2024 году Макс Джонсели Гаспар имел возможность встретиться с одним из руководителей Пекинского университета.",
+  "zh": "2024年，马克斯·约翰斯利·加斯帕尔有机会会见北京大学的一位负责人。"
       }[language],
       image: "/images/2021-community-engagement.jpg",
       icon: (
