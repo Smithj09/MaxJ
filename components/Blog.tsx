@@ -48,7 +48,7 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
         ru: "Запись образовательного семинара, посвященного развитию лидерских качеств среди гаитянской молодежи.",
         zh: "专注于海地青年领导力发展的教育工作坊录像。"
       }[language],
-      videoUrl: "https://www.youtube.com/embed/example2",
+      videoUrl: "https://res.cloudinary.com/dkyyt4fts/video/upload/v1769608503/WhatsApp_Video_2026-01-27_at_21.16.14_rnjg2b.mp4",
       thumbnail: "/images/blog-2025-workshop.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
