@@ -4,10 +4,10 @@ import { translations } from '../translations';
 
 interface HeaderProps {
   activeSection: string;
-  currentView: 'home' | 'realisations';
+  currentView: 'home' | 'realisations' | 'blog';
   language: Language;
   onLanguageChange: (lang: Language) => void;
-  onNavigate: (view: 'home' | 'realisations', sectionId?: string) => void;
+  onNavigate: (view: 'home' | 'realisations' | 'blog', sectionId?: string) => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, onLanguageChange, onNavigate }) => {
@@ -45,6 +45,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
   const handleNavClick = (item: { id: string, type: string }) => {
     if (item.type === 'page') {
       onNavigate('realisations');
+    } else if (item.id === 'blog') {
+      onNavigate('blog');
     } else {
       onNavigate('home', item.id);
     }

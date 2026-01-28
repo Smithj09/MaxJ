@@ -5,12 +5,13 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Vision from './components/Vision';
 import Realisations from './components/Realisations';
+import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { Language } from './types';
 import { translations } from './translations';
 
-type View = 'home' | 'realisations';
+type View = 'home' | 'realisations' | 'blog';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
@@ -20,9 +21,9 @@ const App: React.FC = () => {
   const t = translations[language];
 
   useEffect(() => {
-    if (view === 'realisations') {
+    if (view === 'realisations' || view === 'blog') {
       window.scrollTo(0, 0);
-      setActiveSection('realisations');
+      setActiveSection(view);
       return;
     }
 
@@ -75,9 +76,13 @@ const App: React.FC = () => {
             <Vision language={language} />
             <Contact language={language} />
           </>
-        ) : (
+        ) : view === 'realisations' ? (
           <div className="pt-20">
             <Realisations language={language} />
+          </div>
+        ) : (
+          <div className="pt-20">
+            <Blog language={language} />
           </div>
         )}
       </main>
