@@ -70,7 +70,7 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
         ru: "Документальный фильм о программе работы с сообществом, помогающей местным общинам с образовательными ресурсами.",
         zh: "帮助当地社区获取教育资源的外展项目纪录片。"
       }[language],
-      videoUrl: "https://www.youtube.com/embed/example3",
+      videoUrl: "https://res.cloudinary.com/dkyyt4fts/video/upload/v1769608746/WhatsApp_Video_2026-01-27_at_21.20.02_p1imhr.mp4",
       thumbnail: "/images/blog-2024-community.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
         ru: "Видеорепортаж с церемонии объявления стипендий для гаитянских студентов в китайских университетах.",
         zh: "海地学生在中国大学奖学金公告仪式的视频报道。"
       }[language],
-      videoUrl: "https://www.youtube.com/embed/example4",
+      videoUrl: "https://res.cloudinary.com/dkyyt4fts/video/upload/v1769608720/WhatsApp_Video_2026-01-27_at_21.29.53_wzwclt.mp4",
       thumbnail: "/images/blog-2023-scholarship.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +115,7 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
         ru: "Полная запись саммита молодежного лидерства, посвященного гражданской активности и развитию сообщества.",
         zh: "专注于公民参与和社区发展的青年领导力峰会完整录像。"
       }[language],
-      videoUrl: "https://www.youtube.com/embed/example5",
+      videoUrl: "https://res.cloudinary.com/dkyyt4fts/video/upload/v1769609113/WhatsApp_Video_2026-01-27_at_20.53.29_wdzuiq.mp4",
       thumbnail: "/images/blog-2022-summit.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,7 +137,7 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
         ru: "Видеодокументация об установлении партнерства между гаитянскими и китайскими образовательными учреждениями.",
         zh: "海地与中国教育机构建立合作伙伴关系的视频记录。"
       }[language],
-      videoUrl: "https://www.youtube.com/embed/example6",
+      videoUrl: "https://res.cloudinary.com/dkyyt4fts/video/upload/v1769608732/WhatsApp_Video_2026-01-27_at_21.06.21_pttrnf.mp4",
       thumbnail: "/images/blog-2021-partnership.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,11 +172,12 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
                 {/* Video Player */}
                 <div className="mb-8 h-72 bg-slate-200 rounded-2xl overflow-hidden group-hover:bg-slate-300 transition-colors">
                   <iframe 
-                    src={item.videoUrl}
+                    src={item.videoUrl.includes('youtube.com') ? `${item.videoUrl}?autoplay=0` : item.videoUrl}
                     title={item.title}
                     className="w-full h-full object-cover"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    autoplay="false"
                   ></iframe>
                 </div>
                 
