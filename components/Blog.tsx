@@ -37,14 +37,14 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
     {
       year: "2025",
       title: {
-        en: "Educational Workshop",
-        fr: "Atelier éducatif",
+        en: "Invitation to the World Export and Import Conference",
+        fr: "Invitation à la Conference sur l'exportation et l'importation mondiale",
         ru: "Образовательный семинар",
         zh: "教育工作坊"
       }[language],
       desc: {
-        en: "Recording of the educational workshop focused on leadership development for Haitian youth.",
-        fr: "Enregistrement de l'atelier éducatif axé sur le développement du leadership pour la jeunesse haïtienne.",
+        en: "Max Johnsley Gaspard was invited by COE in China to the major World Export and Import Conference in November 2025.",
+        fr: "Max Johnsley Gaspard a été invité par COE en chine , à la grande Conference sur l'exportation et l'importation mondiale en Novembre 2025",
         ru: "Запись образовательного семинара, посвященного развитию лидерских качеств среди гаитянской молодежи.",
         zh: "专注于海地青年领导力发展的教育工作坊录像。"
       }[language],
@@ -79,21 +79,21 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
       )
     },
     {
-      year: "2023",
+      year: "2024",
       title: {
-        en: "Scholarship Announcement",
-        fr: "Annonce des bourses",
+        en: "Nanjing Normal University Conference",
+        fr: "Conférence de l'Université normale de Nanjing",
         ru: "Объявление о стипендиях",
         zh: "奖学金公告"
       }[language],
       desc: {
-        en: "Video coverage of the scholarship announcement ceremony for Haitian students in Chinese universities.",
-        fr: "Couverture vidéo de la cérémonie d'annonce des bourses pour les étudiants haïtiens dans les universités chinoises.",
+        en: "In 2024, Max Johnsley Gaspard was present at the major annual conference organized by Nanjing Normal University.",
+        fr: "En 2024 Max Johnsley Gaspard a été présent à la grande Conference annuelle organisée par Nanjing normal university",
         ru: "Видеорепортаж с церемонии объявления стипендий для гаитянских студентов в китайских университетах.",
         zh: "海地学生在中国大学奖学金公告仪式的视频报道。"
       }[language],
       videoUrl: "https://res.cloudinary.com/dkyyt4fts/video/upload/v1769608720/WhatsApp_Video_2026-01-27_at_21.29.53_wzwclt.mp4",
-      thumbnail: "/images/blog-2023-scholarship.jpg",
+      thumbnail: "/images/blog-2024-conference.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
