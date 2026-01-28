@@ -20,6 +20,7 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
             language === 'ru' ? "Назначен Послом Вселенной Книг в Китае, возглавляя инициативы по продвижению чтения среди молодежи." : 
             language === 'zh' ? "被任命为图书宇宙驻华大使，领导促进青少年阅读的倡议。" : 
             "Nommé Ambassadeur de l'Univers des Livres en Chine, menant des initiatives pour la promotion de la lecture chez les jeunes.",
+      image: "/images/2026-cultural-diplomacy.jpg", // ⬅️ ADD YOUR IMAGE URL HERE
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -28,11 +29,16 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
     },
     {
       year: "2025",
-      title: language === 'en' ? "Linguistic Bridge" : language === 'ru' ? "Лингвистический мост" : language === 'zh' ? "语言桥梁" : "Pont Linguistique",
+      title: language === 'en' ? "Linguistic Bridge" : language === 'ru' ? "Лингвистический мост" : language === 'zh' ? "语言桥梁" : "Production Littéraire",
       desc: language === 'en' ? "Mastery of Mandarin used to advocate for strengthened Sino-Haitian economic cooperation." : 
             language === 'ru' ? "Владение мандаринским языком используется для защиты укрепления китайско-гаитянского экономического сотрудничества." : 
             language === 'zh' ? "利用精通的普通话倡导加强中海经济合作。" : 
-            "Maîtrise du Mandarin utilisée pour plaider en faveur d'une coopération économique sino-haïtienne renforcée.",
+            "Il a annoncé la publication de son premier ouvrage intitulé \"Le Président haïtien en Chine\", prévu pour juillet 2026, avec des traductions en mandarin, français, anglais et espagnol.",
+
+
+
+
+      image: "/images/2025-linguistic-bridge.jpg", // ⬅️ ADD YOUR IMAGE URL HERE
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
@@ -41,11 +47,12 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
     },
     {
       year: "2024",
-      title: language === 'en' ? "Digital Impact" : language === 'ru' ? "Цифровое влияние" : language === 'zh' ? "数字化影响" : "Impact Numérique",
+      title: language === 'en' ? "Digital Impact" : language === 'ru' ? "Цифровое влияние" : language === 'zh' ? "数字化影响" : "Parcours de leadership remarquable",
       desc: language === 'en' ? "Several viral conferences on Haitian social networks mobilizing youth around educational issues." : 
             language === 'ru' ? "Несколько вирусных конференций в гаитянских социальных сетях, мобилизующих молодежь вокруг вопросов образования." : 
             language === 'zh' ? "在海地社交网络上举行了几次病毒式会议，动员年轻人关注教育问题。" : 
-            "Plusieurs conférences virales sur les réseaux sociaux haïtiens mobilisant la jeunesse autour des enjeux éducatifs.",
+            "Président de sa promotion du nouveau secondaire 1 jusqu'au nouveau secondaire 3 et une année plus tard il deviendra le président général du collège  Mixte Saint Amand Jérusalem situé à delmas 31 ,Rue Marbois B.",
+      image: "/images/2024-digital-impact.jpg", // ⬅️ ADD YOUR IMAGE URL HERE
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -59,6 +66,11 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
             language === 'ru' ? "Публикация критических анализов социального неравенства на Гаити и предложений по структурным реформам." : 
             language === 'zh' ? "发表关于海地社会差距的批判性分析和结构性改革建议。" : 
             "Publication d'analyses critiques sur les disparités sociales en Haïti and propositions de réformes structurelles.",
+
+
+
+            
+      image: "/images/2023-economic-expertise.jpg", // ⬅️ ADD YOUR IMAGE URL HERE
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -87,11 +99,13 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {items.map((item, idx) => (
               <div key={idx} className="group p-6 sm:p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
-                {/* Image placeholder */}
-                <div className="mb-6 h-64 bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-slate-300 transition-colors">
-                  <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                {/* Image */}
+                <div className="mb-6 h-64 bg-slate-200 rounded-2xl overflow-hidden group-hover:bg-slate-300 transition-colors">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 
                 <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4">{item.title}</h4>
