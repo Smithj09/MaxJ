@@ -110,7 +110,7 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
         ru: "С 2020 по 2022 год он обучил более 900 000 молодых людей в рамках программ гражданского образования. В 2025 году он получил сертификат признания за поддержку гаитянских лицеистов от центрального комитета лицея Антуана и Жоржа Измери.",
         zh: "从2020年至2022年，他通过公民教育培训项目培养了超过90万名青年。2025年，他因对海地高中生的支持，获得了安托万与乔治·伊兹梅里中学中央委员会颁发的表彰证书。"
       }[language],
-      image: "/images/2022-educational-leadership.jpg",
+      image: "https://i.postimg.cc/v8j5DSwZ/li.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
