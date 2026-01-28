@@ -59,19 +59,19 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
     {
       year: "2024",
       title: {
-        en: "Community Outreach Event",
-        fr: "Événement de sensibilisation communautaire",
+        en: "NBTV-1 Interview in China",
+        fr: "Interview à la NBTV-1 en Chine",
         ru: "Мероприятие по работе с сообществом",
         zh: "社区外展活动"
       }[language],
       desc: {
-        en: "Documentary of the community outreach program helping local communities with educational resources.",
-        fr: "Documentaire du programme de sensibilisation communautaire aidant les communautés locales avec des ressources éducatives.",
+        en: "Max Johnsley Gaspard was featured on NBTV-1 in China during a cultural activity organized by Ningbo officials. On this red paper, he wrote: 'A Sino-Haitian relationship.' This phrase attracted the attention of the public and Chinese media.",
+        fr: "Max Johnsley Gaspard a été présenté à la Télé NBTV-1 en chine durant une activité culturelle organisée par les responsables de Ningbo, sur ce papier rouge il a écrit : Une relation sino-Haitienne. Cette phrase avait attiré l'attention du publique et aussi des médias chinois.",
         ru: "Документальный фильм о программе работы с сообществом, помогающей местным общинам с образовательными ресурсами.",
         zh: "帮助当地社区获取教育资源的外展项目纪录片。"
       }[language],
       videoUrl: "https://res.cloudinary.com/dkyyt4fts/video/upload/v1769608746/WhatsApp_Video_2026-01-27_at_21.20.02_p1imhr.mp4",
-      thumbnail: "/images/blog-2024-community.jpg",
+      thumbnail: "/images/blog-2024-nbtv1.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -124,21 +124,21 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
       )
     },
     {
-      year: "2021",
+      year: "2023",
       title: {
-        en: "University Partnership Event",
-        fr: "Événement de partenariat universitaire",
+        en: "Political Rally in Anse-Rouge",
+        fr: "Rassemblement politique à Anse-Rouge",
         ru: "Мероприятие университетского партнерства",
         zh: "大学合作活动"
       }[language],
       desc: {
-        en: "Video documentation of the partnership establishment between Haitian and Chinese educational institutions.",
-        fr: "Documentation vidéo de l'établissement du partenariat entre les institutions éducatives haïtiennes et chinoises.",
+        en: "Video documentation of the partnership establishment between Haitian and Chinese educational institutions. On May 18, 2023 in Anse-Rouge, Max Johnsley Gaspard held a political rally before leaving Haiti for the People's Republic of China, giving hope that he would return to serve his country.",
+        fr: "Documentation vidéo de l'établissement du partenariat entre les institutions éducatives haïtiennes et chinoises. 18 Mai 2023 À Anse-Rouge Max Johnsley Gaspard a fait un rassemblement politique avant de laisser Haïti pour aller en République populaire de chine. Tout en donnant espoir qu'il sera de retour à la service de son pays.",
         ru: "Видеодокументация об установлении партнерства между гаитянскими и китайскими образовательными учреждениями.",
         zh: "海地与中国教育机构建立合作伙伴关系的视频记录。"
       }[language],
       videoUrl: "https://res.cloudinary.com/dkyyt4fts/video/upload/v1769608732/WhatsApp_Video_2026-01-27_at_21.06.21_pttrnf.mp4",
-      thumbnail: "/images/blog-2021-partnership.jpg",
+      thumbnail: "/images/blog-2023-political-rally.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
