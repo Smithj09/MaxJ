@@ -61,19 +61,46 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
     },
     {
       year: "2023",
-      title: language === 'en' ? "Economic Expertise" : language === 'ru' ? "Экономическая экспертиза" : language === 'zh' ? "经济专业知识" : "Expertise Économique",
+      title: language === 'en' ? "Economic Expertise" : language === 'ru' ? "Экономическая экспертиза" : language === 'zh' ? "经济专业知识" : "Leadership éducatif et promotion des opportunités académiques",
       desc: language === 'en' ? "Publication of critical analyses on social disparities in Haiti and structural reform proposals." : 
             language === 'ru' ? "Публикация критических анализов социального неравенства на Гаити и предложений по структурным реформам." : 
             language === 'zh' ? "发表关于海地社会差距的批判性分析和结构性改革建议。" : 
-            "Publication d'analyses critiques sur les disparités sociales en Haïti and propositions de réformes structurelles.",
-
-
-
+ "Chaque année, il mobilise des institutions en Haïti en vue de faciliter aux étudiants haïtiens de bénéficier des bourses d'études au sein des universités et des écoles professionnelles, notamment : Institution Mixte Émergence Patriotique, située à Delmas 24 ; Université Saint François d'Assise d'Haïti, située à Delmas 33 ; Institution Mixte David Mondésir, située à Delmas 31 ; Go On Institute, situé à Delmas 33, en face de l'Hôpital La Paix ; Alliance École Professionnelle, située dans le département de l'Ouest à Delmas.",
             
       image: "/images/2023-economic-expertise.jpg", // ⬅️ ADD YOUR IMAGE URL HERE
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      )
+    },
+    {
+      year: "2022",
+      title: language === 'en' ? "Educational Leadership" : language === 'ru' ? "Образовательное лидерство" : language === 'zh' ? "教育领导力" : "Contribution à la formation citoyenne des jeunes",
+      desc: language === 'en' ? "Initiation of youth mentorship programs and educational workshops across Haitian communities." : 
+            language === 'ru' ? "Инициирование программ наставничества молодежи и образовательных семинаров в гаитянских сообществах." : 
+            language === 'zh' ? "在海地社区启动青年指导计划和教育研讨会。" : 
+            "De 2020 à 2022, il a formé plus de 900 000 jeunes à travers des formations sur l’éducation à la citoyenneté. En 2025, il a reçu un certificat de reconnaissance pour son soutien envers les lycéens haïtiens de la part du comité central du lycée Antoine et Georges Izmery.",
+
+      image: "/images/2022-educational-leadership.jpg", // ⬅️ ADD YOUR IMAGE URL HERE
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l9-5m-9 5v9" />
+        </svg>
+      )
+    },
+    {
+      year: "2021",
+      title: language === 'en' ? "Community Engagement" : language === 'ru' ? "Вовлечение сообщества" : language === 'zh' ? "社区参与" : "Engagement Communautaire",
+      desc: language === 'en' ? "Foundational work in grassroots organizing and community development initiatives in Haiti." : 
+            language === 'ru' ? "Фундаментальная работа в области организации на местах и инициатив по развитию сообществ на Гаити." : 
+            language === 'zh' ? "在海地进行基层组织和社区发展倡议的基础性工作。" : 
+            "Travail fondamental dans l'organisation de base et les initiatives de développement communautaire en Haïti.",
+      image: "/images/2021-community-engagement.jpg", // ⬅️ ADD YOUR IMAGE URL HERE
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       )
     }
@@ -96,11 +123,11 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
 
       <section className="py-12 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
             {items.map((item, idx) => (
-              <div key={idx} className="group p-6 sm:p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
+              <div key={idx} className="group p-8 sm:p-10 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
                 {/* Image */}
-                <div className="mb-6 h-64 bg-slate-200 rounded-2xl overflow-hidden group-hover:bg-slate-300 transition-colors">
+                <div className="mb-8 h-72 bg-slate-200 rounded-2xl overflow-hidden group-hover:bg-slate-300 transition-colors">
                   <img 
                     src={item.image} 
                     alt={item.title}
@@ -108,8 +135,8 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
                   />
                 </div>
                 
-                <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4">{item.title}</h4>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">{item.title}</h4>
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
