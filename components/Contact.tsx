@@ -69,13 +69,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             {t.title}
             <span className="block text-red-500 text-2xl md:text-3xl font-bold mt-2">Max Jhonsley Gaspard</span>
           </h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            {language === 'fr' && "Envoyez-moi un message directement et je vous répondrai dans les plus brefs délais."}
-            {language === 'en' && "Send me a message directly and I'll get back to you as soon as possible."}
-            {language === 'es' && "Envíame un mensaje directamente y te responderé lo antes posible."}
-            {language === 'ru' && "Отправьте мне сообщение напрямую, и я отвечу вам в ближайшее время."}
-            {language === 'zh' && "直接给我发送消息，我会尽快回复您。"}
-          </p>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed"></p>
         </div>
 
         {/* Form Section */}

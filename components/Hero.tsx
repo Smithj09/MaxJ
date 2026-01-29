@@ -94,6 +94,8 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
 
         {/* Profile Picture Container */}
         <div className="lg:w-[40%] relative w-full max-w-[340px] sm:max-w-md lg:max-w-none order-1 lg:order-2">
+          {/* Red gradient background for separation effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-red-100 via-red-200 to-red-300 rounded-[3rem] transform rotate-3 scale-105 opacity-70 blur-xl" />
           <div className="relative z-10 w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[3rem] p-2 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden">
             <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
               <img
@@ -102,6 +104,12 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 className="w-full h-full object-cover object-center"
               />
             </div>
+            {/* Haitian Flag Overlay */}
+            <img
+              src="https://i.postimg.cc/T2g09jcH/Lhistoire-et-la-signification-profonde-du-drapeau-d-Haiti-Symbole-de-liberte-de-lutte-et-de-fierte-n.jpg"
+              alt="Haitian Flag"
+              className="absolute top-4 left-4 w-14 h-10 sm:w-20 sm:h-12 object-cover rounded-md shadow-lg border-2 border-white z-20"
+            />
           </div>
         </div>
 
