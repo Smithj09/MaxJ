@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Language } from '../types';
 import { translations } from '../translations';
 
@@ -8,6 +8,24 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ language }) => {
   const t = translations[language].about;
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Get the read more/less text based on language
+  const readMoreText = {
+    fr: "Lire la suite",
+    en: "Read more",
+    ru: "Читать далее",
+    zh: "查看更多",
+    es: "Leer más"
+  };
+  
+  const readLessText = {
+    fr: "Lire moins",
+    en: "Read less",
+    ru: "Читать меньше",
+    zh: "收起",
+    es: "Leer menos"
+  };
 
   return (
     <section id="about" className="py-16 sm:py-24 bg-white">
@@ -18,7 +36,22 @@ const About: React.FC<AboutProps> = ({ language }) => {
               <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-slate-900 leading-tight text-center">{t.title}</h3>
               <div className="space-y-4 text-slate-600 text-lg sm:text-xl leading-relaxed mb-8">
                 <p>{t.p1}</p>
-                <p>{t.p2}</p>
+                {/* Mobile view with expandable text */}
+                <div className="sm:hidden">
+                  <p className={`transition-all duration-300 ease-in-out ${isExpanded ? 'line-clamp-none' : 'line-clamp-4'}`}>
+                    {t.p2}
+                  </p>
+                  <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="mt-3 text-red-600 font-bold hover:text-red-700 transition-colors"
+                  >
+                    {isExpanded ? readLessText[language] : readMoreText[language]}
+                  </button>
+                </div>
+                {/* Desktop view with full text */}
+                <div className="hidden sm:block">
+                  <p>{t.p2}</p>
+                </div>
               </div>
             </div>
           </div>
