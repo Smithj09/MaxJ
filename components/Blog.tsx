@@ -170,11 +170,11 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
             {videoItems.map((item, idx) => (
               <div key={idx} className="group p-8 sm:p-10 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
                 {/* Video Player */}
-                <div className="mb-8 h-72 bg-slate-200 rounded-2xl overflow-hidden group-hover:bg-slate-300 transition-colors">
+                <div className="mb-8 relative bg-slate-200 rounded-2xl overflow-hidden group-hover:bg-slate-300 transition-colors" style={{ paddingBottom: '56.25%' }}>
                   <iframe 
                     src={item.videoUrl.includes('youtube.com') ? `${item.videoUrl}?autoplay=0` : item.videoUrl}
                     title={item.title}
-                    className="w-full h-full object-cover"
+                    className="absolute top-0 left-0 w-full h-full object-contain"
                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     autoplay="false"
