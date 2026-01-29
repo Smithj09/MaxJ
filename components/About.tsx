@@ -10,6 +10,23 @@ const About: React.FC<AboutProps> = ({ language }) => {
   const t = translations[language].about;
   const [isExpanded, setIsExpanded] = useState(false);
 
+  // Get the read more/less text based on language
+  const readMoreText = {
+    fr: "Lire la suite",
+    en: "Read more",
+    ru: "Читать далее",
+    zh: "查看更多",
+    es: "Leer más"
+  };
+  
+  const readLessText = {
+    fr: "Lire moins",
+    en: "Read less",
+    ru: "Читать меньше",
+    zh: "收起",
+    es: "Leer menos"
+  };
+
   return (
     <section id="about" className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,7 +45,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
                     onClick={() => setIsExpanded(!isExpanded)}
                     className="mt-3 text-red-600 font-bold hover:text-red-700 transition-colors"
                   >
-                    {isExpanded ? t.readLess : t.readMore}
+                    {isExpanded ? readLessText[language] : readMoreText[language]}
                   </button>
                 </div>
                 {/* Desktop view with full text */}
