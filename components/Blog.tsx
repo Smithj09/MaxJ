@@ -12,20 +12,47 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
   
   // State to track selected blog post for popup
   const [selectedPost, setSelectedPost] = useState<typeof videoItems[0] | null>(null);
+  
+  // Expandable Text Component for long descriptions
+  const ExpandableText: React.FC<{ text: string; isModal?: boolean }> = ({ text, isModal = false }) => {
+    const [isExpanded, setIsExpanded] = useState(isModal); // Show full text in modal by default
+    const MAX_LENGTH = 150; // Character limit for truncated text
+    
+    if (text.length <= MAX_LENGTH) {
+      return <p className="text-sm sm:text-base text-slate-600 leading-relaxed whitespace-pre-wrap">{text}</p>;
+    }
+    
+    return (
+      <div>
+        <p className="text-sm sm:text-base text-slate-600 leading-relaxed whitespace-pre-wrap">
+          {isExpanded ? text : `${text.substring(0, MAX_LENGTH)}...`}
+        </p>
+        <button 
+          className="mt-2 text-blue-600 font-medium hover:text-blue-800 transition-colors"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? 
+            { en: 'View Less', fr: 'Voir moins', ru: 'Скрыть', zh: '查看更少' }[language] : 
+            { en: 'View More', fr: 'Voir plus', ru: 'Показать больше', zh: '查看更多' }[language] 
+          }
+        </button>
+      </div>
+    );
+  };
 
   // Localized video items for events
   const videoItems = [
     {
       year: "2026",
       title: {
-        en: "Cultural Exchange Event",
-        fr: "Événement d'échange culturel",
-        ru: "Мероприятие культурного обмена",
-        zh: "文化交流活动"
+        en: "Political Campaign Speech",
+        fr: "Discours de campagne politique",
+        ru: "Политический речевой выступление",
+        zh: "政治竞选演讲"
       }[language],
       desc: {
-        en: "Highlights from the recent cultural exchange event promoting Haitian-Chinese relations through art and music.",
-        fr: "Points forts de l'événement récent d'échange culturel promouvant les relations haïtiano-chinoises à travers l'art et la musique.",
+        en: "I stand before you not as the heir of a system, but as the face of a generation that refuses to see its destiny written without it. We are often told that we are the future; I tell you that we are the present.\nFor too long, politics has been a monologue. Today, I want to make it a dialogue. My candidacy is not just a personal ambition, it is a contract of trust to transform our challenges into victories. We carry climate urgency, the demand for a fair economy, and the thirst for truly transparent democracy.\nLook at the world of tomorrow: it belongs to those who dare. I propose to build a state that does not suffocate, but that propels. A state where merit is not an empty word and where every young person, from the most remote village to the metropolis, can dream of excellence.\nMy commitment is simple: audacity to serve, clarity to act. Let us no longer let others decide the color of our horizon. The website Vie-Publique.fr reminds us that the president guarantees national unity; I will be that guarantee, with the energy of youth.",
+        fr: "Je me tiens devant vous non pas comme l’héritier d’un système, mais comme le visage d'une génération qui refuse de voir son destin s'écrire sans elle. On nous dit souvent que nous sommes l’avenir ; je vous réponds que nous sommes le présent.\nPendant trop longtemps, la politique a été un monologue. Aujourd'hui, je veux en faire un dialogue. Ma candidature n'est pas une simple ambition personnelle, c'est un contrat de confiance pour transformer nos défis en victoires. Nous portons l'urgence climatique, l'exigence d'une économie juste et la soif d'une démocratie réellement transparente.\nRegardez le monde de demain : il appartient à ceux qui osent. Je propose de bâtir un État qui n'étouffe pas, mais qui propulse. Un État où le mérite n'est pas un vain mot et où chaque jeune, du village le plus reculé à la métropole, peut rêver d'excellence.\nMon engagement est simple : l'audace pour servir, la clarté pour agir. Ne laissons plus les autres décider de la couleur de notre horizon. Le site Vie-Publique.fr rappelle que le président garantit l'unité nationale ; je serai ce garant, avec l'énergie de la jeunesse.",
         ru: "Основные моменты недавнего мероприятия культурного обмена, способствующего развитию гаитяно-китайских отношений через искусство и музыку.",
         zh: "近期文化交流活动的精彩瞬间，通过艺术和音乐促进海地与中国的关系。"
       }[language],
@@ -189,9 +216,7 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
                 </div>
                 
                 <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">{item.title}</h4>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  {item.desc}
-                </p>
+                <ExpandableText text={item.desc} />
               </div>
             ))}
           </div>
@@ -251,9 +276,7 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">{selectedPost.year} - {selectedPost.title}</h3>
                 </div>
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                  {selectedPost.desc}
-                </p>
+                <ExpandableText text={selectedPost.desc} isModal={true} />
               </div>
             </div>
           </div>
