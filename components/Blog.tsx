@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Language } from '../types';
 import { translations } from '../translations';
 
@@ -9,6 +9,9 @@ interface BlogProps {
 
 const Blog: React.FC<BlogProps> = ({ language }) => {
   const t = translations[language].nav;
+  
+  // State to track selected blog post for popup
+  const [selectedPost, setSelectedPost] = useState<typeof videoItems[0] | null>(null);
 
   // Localized video items for events
   const videoItems = [
@@ -168,7 +171,11 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
             {videoItems.map((item, idx) => (
-              <div key={idx} className="group p-8 sm:p-10 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
+              <div 
+                key={idx} 
+                className="group p-8 sm:p-10 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300 cursor-pointer"
+                onClick={() => setSelectedPost(item)}
+              >
                 {/* Video Player */}
                 <div className="mb-8 relative bg-slate-200 rounded-2xl overflow-hidden group-hover:bg-slate-300 transition-colors" style={{ paddingBottom: '56.25%' }}>
                   <iframe 
@@ -201,6 +208,56 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
             <p className="text-sm sm:text-base text-blue-800 font-bold uppercase tracking-wider">- Max Johnsley Gaspard</p>
           </div>
         </div>
+        
+        {/* Popup Modal */}
+        {selectedPost && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+            onClick={() => setSelectedPost(null)}
+          >
+            <div 
+              className="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="relative">
+                {/* Video Player in Modal */}
+                <div className="relative" style={{ paddingBottom: '56.25%' }}>
+                  <iframe 
+                    src={selectedPost.videoUrl.includes('youtube.com') ? `${selectedPost.videoUrl}?autoplay=0` : selectedPost.videoUrl}
+                    title={selectedPost.title}
+                    className="absolute top-0 left-0 w-full h-full object-contain"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    autoplay="false"
+                  ></iframe>
+                </div>
+                
+                <button 
+                  className="absolute top-4 right-4 bg-white p-2 shadow-lg hover:bg-gray-100 transition-colors"
+                  onClick={() => setSelectedPost(null)}
+                >
+                  <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              {/* Modal Content */}
+              <div className="p-8">
+                <div className="flex items-center mb-4">
+                  <div className="text-blue-600 mr-3">
+                    {selectedPost.icon}
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">{selectedPost.year} - {selectedPost.title}</h3>
+                </div>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                  {selectedPost.desc}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
     </div>
   );
