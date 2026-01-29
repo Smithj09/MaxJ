@@ -32,8 +32,8 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
           onClick={() => setIsExpanded(!isExpanded)}
         >
           {isExpanded ? 
-            { en: 'View Less', fr: 'Voir moins', ru: 'Скрыть', zh: '查看更少' }[language] : 
-            { en: 'View More', fr: 'Voir plus', ru: 'Показать больше', zh: '查看更多' }[language] 
+            translations[language].hero?.readLess || 'View Less' : 
+            translations[language].hero?.readMore || 'View More'
           }
         </button>
       </div>

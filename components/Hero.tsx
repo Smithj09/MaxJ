@@ -53,7 +53,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="text-red-600 hover:text-red-700 font-semibold underline transition-colors duration-200"
               >
-                {isExpanded ? 'Voir moins' : 'Voir plus'}
+                {isExpanded ? t.readLess : t.readMore}
               </button>
             )}
           </div>

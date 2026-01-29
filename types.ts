@@ -1,5 +1,5 @@
 
-export type Language = 'fr' | 'en' | 'ru' | 'zh';
+export type Language = 'fr' | 'en' | 'es' | 'ru' | 'zh';
 
 export interface VisionCard {
   title: string;

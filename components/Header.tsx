@@ -29,6 +29,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, currentView, language, o
   const languages: { code: Language, label: string, flag: string }[] = [
     { code: 'fr', label: 'Français', flag: '🇫🇷' },
     { code: 'en', label: 'English', flag: '🇺🇸' },
+    { code: 'es', label: 'Español', flag: '🇪🇸' },
     { code: 'ru', label: 'Русский', flag: '🇷🇺' },
     { code: 'zh', label: '中文', flag: '🇨🇳' },
   ];
