@@ -92,7 +92,7 @@ const Realisations: React.FC<RealisationsProps> = ({ language }) => {
         ru: "Каждый год он мобилизует учреждения на Гаити, чтобы помочь гаитянским студентам получить стипендии в университетах и профессиональных школах, в частности: Institution Mixte Émergence Patriotique (Дельмас 24); Université Saint François d’Assise d’Haïti (Дельмас 33); Institution Mixte David Mondésir (Дельмас 31); Go On Institute (Дельмас 33, напротив больницы La Paix); Alliance École Professionnelle (департамент Запад, Дельмас).",
         zh: "每年，他动员海地的相关机构，帮助海地学生获得大学和职业学校的奖学金，包括：德尔马斯24号的爱国复兴混合学院；德尔马斯33号的海地圣弗朗索瓦·达西斯大学；德尔马斯31号的大卫·蒙德西尔混合学院；位于德尔马斯33号、和平医院对面的 Go On 学院；以及位于德尔马斯、西部省的联盟职业学校。"
       }[language],
-      image: "/images/2023-economic-expertise.jpg",
+      image: "https://i.postimg.cc/mDpLxSmV/Whats-App-Image-2026-01-28-at-22-00-24.jpg",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
