@@ -5,6 +5,7 @@ import { translations } from '../translations';
 // Props interface for language support
 interface FooterProps {
   language: Language;
+  showOnDarkBackground?: boolean;
 }
 
 // Interface for social media links
@@ -14,7 +15,7 @@ interface SocialLink {
   icon: React.ReactNode;
 }
 
-const Footer: React.FC<FooterProps> = ({ language }) => {
+const Footer: React.FC<FooterProps> = ({ language, showOnDarkBackground = false }) => {
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -65,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
   };
 
   return (
-    <footer className="bg-slate-950 text-slate-300 pt-20 pb-10">
+    <footer className={`${showOnDarkBackground ? 'bg-slate-950/90 backdrop-blur-sm' : 'bg-slate-950'} text-slate-300 pt-20 pb-10`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
 

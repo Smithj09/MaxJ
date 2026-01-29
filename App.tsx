@@ -86,7 +86,7 @@ const App: React.FC = () => {
           </div>
         )}
       </main>
-      <Footer language={language} />
+      <Footer language={language} showOnDarkBackground={view === 'blog'} />
     </div>
   );
 };

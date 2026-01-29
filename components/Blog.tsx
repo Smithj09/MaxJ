@@ -178,9 +178,19 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
   ];
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Haitian Flag Background */}
+      <div className="fixed inset-0 -z-10">
+        <img 
+          src="https://i.postimg.cc/15VqHvBP/haiti-flag-flying-wind-1249257-1714.avif" 
+          alt="Haitian Flag" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-900/85"></div>
+      </div>
+      
       {/* Header for the Blog Page */}
-      <section className="py-12 sm:py-20 bg-slate-900 text-white">
+      <section className="py-12 sm:py-20 bg-transparent text-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-5xl font-bold mb-4 sm:mb-6">{t.blog}</h1>
           <p className="text-base sm:text-xl text-slate-400 max-w-3xl mx-auto px-2">
@@ -194,7 +204,7 @@ const Blog: React.FC<BlogProps> = ({ language }) => {
         </div>
       </section>
 
-      <section className="py-12 sm:py-24">
+      <section className="py-12 sm:py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
             {videoItems.map((item, idx) => (
